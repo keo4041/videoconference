@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package videoconference;
+
+option go_package = "./videoconference";
+
+service Conference {
+  rpc JoinConference (stream MediaStream) returns (stream MediaStream) {}
+}
+
+message MediaStream {
+  bytes data = 1;
+}
